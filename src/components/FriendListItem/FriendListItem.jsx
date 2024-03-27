@@ -1,6 +1,6 @@
 import {Color, FriendsList, FriendsItem, FriendsImage, FriendsParagraph, FriendsWrapper} from "./FriendList.styled.jsx"
 
-export default function FriendList ({friends}) {
+export default function FriendListItem ({friends}) {
  
   return(
 	<FriendsWrapper>
