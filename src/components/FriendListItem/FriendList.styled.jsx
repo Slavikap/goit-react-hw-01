@@ -1,7 +1,9 @@
 import styled from "@emotion/styled"
 
 export const FriendsWrapper = styled.div `
+display: flex;
 justify-content: center;
+align-items: center;
 `
 
 export const Color = styled.span `
@@ -24,9 +26,9 @@ export const Color = styled.span `
 ;
 
 export const FriendsList = styled.ul `
-margin-top: 30px;
-width: 730px;
 display: flex;
+margin-top: 30px;
+width: 137px;
 gap: 15px;
 `
 export const FriendsItem = styled.li `

@@ -1,18 +1,24 @@
-import {Color, FriendsList, FriendsItem, FriendsImage, FriendsParagraph, FriendsWrapper} from "./FriendList.styled.jsx"
+import React from 'react';
+import styled from '@emotion/styled';
+import { FriendsWrapper, FriendsList, FriendsItem, FriendsImage, FriendsParagraph } from './FriendList.styled';
 
-export default function FriendListItem ({friends}) {
- 
-  return(
-	<FriendsWrapper>
-	<FriendsList>
-	{friends.map(({ id, isOnline, avatar, name }) => (
-        <FriendsItem key={id}>       
-          <FriendsImage src={avatar} alt="User avatar" width="48" />
-          <FriendsParagraph>{name}</FriendsParagraph>
-		  <Color status={isOnline}></Color>
-        </FriendsItem>
-      ))}
-	  </FriendsList>
-	  </FriendsWrapper>
-  )
+
+const StatusText = styled.span`
+  color: ${props => (props.isOnline ? 'green' : 'red')};
+`;
+
+export default function FriendListItem({ friend }) { 
+  return (
+      <FriendsWrapper>
+        <FriendsList>
+          <FriendsItem key={friend.id}>
+            <FriendsImage src={friend.avatar} alt="User avatar" width="48" />
+            <FriendsParagraph>{friend.name}</FriendsParagraph>
+            <StatusText isOnline={friend.isOnline}>
+              {friend.isOnline ? 'Online' : 'Offline'}
+            </StatusText>
+          </FriendsItem>
+        </FriendsList>
+      </FriendsWrapper>
+  );
 }
