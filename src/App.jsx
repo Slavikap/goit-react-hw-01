@@ -1,9 +1,9 @@
 import React from 'react';
-import Profile from './components/Profile/Profile';
-import FriendListItem from './components/FriendListItem/FriendListItem';
+import Profile from './components/Profile/Profile.jsx';
+import FriendList from './components/FriendListItem/FriendList.jsx'; 
 import friendsData from './components/FriendListItem/friends.json';
 import transactions from "./components/TransactionHistory/transaction.json";
-import TransactionHistory from "./components/TransactionHistory/Transaction";
+import TransactionHistory from "./components/TransactionHistory/Transaction.jsx";
 
 const userData = {
   username: 'Jacques Gluke',
@@ -27,9 +27,7 @@ const App = () => {
         image={userData.avatar}
         stats={userData.stats}
       />
-      {friendsData.map(friend => (
-        <FriendListItem key={friend.id} friend={friend} />
-      ))}
+      <FriendList friends={friendsData} /> {}
       <TransactionHistory transactions={transactions} />
     </>
   );
