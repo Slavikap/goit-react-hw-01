@@ -28,11 +28,9 @@ export const TransactionTabHeader = styled.th `
 `
 
 export const TransactionTabBody = styled.tbody `
-
-`
-
-export const TransactionItemRow = styled.tr `
 tr:nth-child(even) {
-    background-color: #D6EEEE;
-  }
+  background-color: lightgray;
+}
+`
+export const TransactionItemRow = styled.tr `
 `
